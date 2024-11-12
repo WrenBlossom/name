@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Lot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        .parking-lot {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+        .slot {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #333;
+            cursor: pointer;
+        }
+        .available {
+            background-color: #76c7c0; /* Green for available */
+        }
+        .occupied {
+            background-color: #f76c6c; /* Red for occupied */
+        }
+    </style>
+</head>
+<body>
+
+<h1>Parking Lot</h1>
+<div class="parking-lot">
+    <div class="slot available" onclick="toggleSlot(this)">1</div>
+    <div class="slot occupied" onclick="toggleSlot(this)">2</div>
+    <div class="slot available" onclick="toggleSlot(this)">3</div>
+    <div class="slot occupied" onclick="toggleSlot(this)">4</div>
+    <div class="slot available" onclick="toggleSlot(this)">5</div>
+    <div class="slot available" onclick="toggleSlot(this)">6</div>
+    <div class="slot occupied" onclick="toggleSlot(this)">7</div>
+    <div class="slot available" onclick="toggleSlot(this)">8</div>
+    <div class="slot available" onclick="toggleSlot(this)">9</div>
+    <div class="slot occupied" onclick="toggleSlot(this)">10</div>
+</div>
+
+<script>
+    function toggleSlot(slot) {
+        if (slot.classList.contains('available')) {
+            slot.classList.remove('available');
+            slot.classList.add('occupied');
+            slot.textContent = 'Occupied';
+        } else {
+            slot.classList.remove('occupied');
+            slot.classList.add('available');
+            slot.textContent = 'Available';
+        }
+    }
+</script>
+
+</body>
+</html>
