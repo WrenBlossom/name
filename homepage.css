@@ -1,0 +1,235 @@
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.header {
+  background: linear-gradient(to top, rgba(6, 6, 7, 0.5), rgba(11, 11, 12, 0.8) 50%);
+  width: 100%;
+  height: 80px;
+  z-index: 1;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  margin-left: 15px; /* Slightly move the logo left */
+}
+
+.navbar .logo img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+
+.navbar .links {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.navbar .links a {
+  text-decoration: none;
+  margin: 0 15px;
+  padding: 10px 20px;
+  font-size: 19px;
+  color: white;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar .links a:hover {
+  background-color: #E85C0D;
+}
+
+.navbar #Home {
+  background-color: #E85C0D;
+  color: white;
+}
+
+.navbar .logo a {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 10px; /* Adjust space between logo and text */
+  white-space: nowrap;
+}
+
+.main-page .main p {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  font-size: 30px;
+  width: 120px;
+  animation: typing 15s steps(80, end), blink 0.5s step-end infinite alternate;
+  animation-fill-mode: backwards;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #f9ca24;
+}
+
+@keyframes typing {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.section-one {
+  background-image: url("../images/paws.jpg");
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.section-one h1 {
+  text-align: center;
+  color: #C21717;
+  font-size: 20px;
+}
+
+.section-one .description p {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.section-one .images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-one .images .image-item img {
+  width: 95%;
+  height: 120px;
+  margin-top: 40px;
+  border-radius: 20px;
+}
+
+.section-one .button {
+  height: 40px;
+  width: 250px;
+  border-radius: 15px;
+  background-color: #C21717;
+  margin: 40px auto; /* Center the button */
+  border: none;
+  display: block; /* Make the button block level */
+}
+
+.section-one .button a {
+  text-decoration: none;
+  color: #000;
+}
+
+.section-one .button:hover {
+  background-color: #E85C0D;
+  transition: 0.5s ease-in-out;
+}
+
+.footer {
+  background-color: black;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 40px;
+}
+
+.footer .column-one img {
+  height: 80px;
+}
+
+.footer .column-one p {
+  color: white;
+}
+
+.footer .column-two {
+   display: flex; 
+}
+
+.footer .column-two h2 {
+  color: #C21717;
+  font-size: 20px;
+  width: 46%;
+  border-bottom: 1px solid #D9D9D9;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+}
+
+.footer .column-two .card {
+  display: flex;
+  background-color: #D9D9D9;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.footer .column-two .card .image img {
+  height: 60px;
+  width: 80px;
+  border-radius: 5px;
+}
+.footer .column-two .description{
+  color: #000;
+  padding-left: 20px;
+}
+.footer .column-three h2{
+  color: #C21717;
+  font-size: 20px;
+  width: 25%;
+  border-bottom: 1px solid #D9D9D9;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  
+ 
+
+}
+.footer .column-three p{
+  color: black;
+}
+
+.footer .column-three .contact-info {
+  background-color:#D9D9D9;
+  margin-bottom: 30px;
+
+}
+
+.footer .column-three .contact-info p{
+  width: 300px;
+  text-align: left;
+  padding-top: 35px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+}
+.footer .column-three .contact-info ul li {
+  display: inline-block;
+
+}
+.footer .column-three .contact-info ul li i{
+ font-size: 40px;
+ margin-left: 20px;
+ margin-top: 25px;
+ padding-bottom: 10px;
+}
+.footer .column-three .contact-info ul li i:hover,.footer .column-three .contact-info ul li i:active{
+  font-size: 50px;
+
+}
+
+.right{
+  text-align: center;
+  text-decoration: none;
+}
