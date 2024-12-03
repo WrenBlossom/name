@@ -1,0 +1,44 @@
+CREATE DATABASE parking_system;
+USE parking_system;
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL, -- For storing hashed passwords
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Insert a test user (with password "password123" hashed for security)
+INSERT INTO users (name, email, password) VALUES 
+(' ', 'user@example.com', MD5('password123'));
+
+CREATE TABLE parking_spots (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    spot_number VARCHAR(10) NOT NULL,
+    is_occupied BOOLEAN NOT NULL DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Add some initial parking spots
+INSERT INTO parking_spots (spot_number, is_occupied) VALUES 
+('A1', 0), 
+('A2', 0), 
+('B1', 0), 
+('B2', 0);
+CREATE TABLE bookings (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    parking_spot_id INT NOT NULL,
+    start_time DATETIME NOT NULL,
+    end_time DATETIME NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (parking_spot_id) REFERENCES parking_spots(id) ON DELETE CASCADE
+);
+
+ALTER TABLE users ADD COLUMN role ENUM('user', 'admin') DEFAULT 'user';
+
+-- Add a test admin account
+INSERT INTO users (name, email, password, role) 
+VALUES ('Admin User', 'admin@example.com', MD5('admin123'), 'admin');
+
